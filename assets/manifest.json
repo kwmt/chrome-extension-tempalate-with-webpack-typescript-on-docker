@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Chrome Extension With TypeScript, Webpack and Docker",
+    "description": "Chrome Extension With TypeScript, Webpack and Docker",
+    "version": "1.0",
+  
+    "icons": { 
+      "16": "icon.png",
+      "48": "icon.png",
+     "128": "icon.png" 
+    },
+    "browser_action" : {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_script.js"]
+        }
+    ],
+    "permissions": [
+      "<all_urls>",
+      "tabs"
+    ]
+}
