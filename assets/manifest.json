@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
   
     "name": "Chrome Extension With TypeScript, Webpack and Docker",
     "description": "Chrome Extension With TypeScript, Webpack and Docker",
@@ -10,17 +10,12 @@
       "48": "icon.png",
      "128": "icon.png" 
     },
-    "browser_action" : {
+    "action" : {
         "default_popup": "popup.html"
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["content_script.js"]
-        }
-    ],
-    "permissions": [
-      "<all_urls>",
-      "tabs"
-    ]
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["scripting", "webNavigation", "storage"],
+    "host_permissions": ["https://example.com/*"]
 }
