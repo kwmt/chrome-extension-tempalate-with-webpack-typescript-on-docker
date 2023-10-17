@@ -1,4 +1,4 @@
-FROM node:alpine3.11
+FROM node:20.8.1-alpine3.18
 WORKDIR  /code
 COPY ./* /code/
 RUN npm install -g typescript webpack webpack-cli && npm install
